@@ -1,0 +1,13 @@
+<header>
+    <h1>Welcome to the Clubhouse</h1>
+    <nav>
+        <a href="/">Home</a>
+        <% if (!user) { %>
+            <a href="/login">Login</a>
+            <a href="/signup">Sign Up</a>
+        <% } else { %>
+            <a href="/new-message">Create a New Message</a>
+            <a href="/logout">Logout</a>
+        <% } %>
+    </nav>
+</header>

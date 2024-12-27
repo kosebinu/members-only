@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join the Club</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main class="container">
+        <h2>Join the Club</h2>
+
+        <!-- Flash Messages -->
+        <% if (error && error.length > 0) { %>
+            <div class="error-message">
+                <p><%= error %></p>
+            </div>
+        <% } %>
+        <% if (success && success.length > 0) { %>
+            <div class="success-message">
+                <p><%= success %></p>
+            </div>
+        <% } %>
+
+        <form action="/join" method="POST">
+            <div class="form-group">
+                <label for="passcode">Secret Passcode:</label>
+                <input type="password" id="passcode" name="passcode" required>
+            </div>
+            <button type="submit" class="btn">Join</button>
+        </form>
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>
